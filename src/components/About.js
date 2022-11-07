@@ -3,8 +3,13 @@ import  './About.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 const About = () => {
+
+    const bookingHandle =() =>{
+        console.warn("yyyy");
+    }
   return (
-    <div className='parent-class'> 
+   <>
+     <div className='parent-class'> 
         <Carousel>
             <Carousel.Item>
             <img
@@ -15,7 +20,7 @@ const About = () => {
             <Carousel.Caption className='caption'>
                 <h3 className='title'>Book online and begin your dream holyday</h3>
                 <p className='description'>Travel with the Airline of the Year </p>
-                <Button variant="primary">Book now</Button>{' '}
+                <Button variant="primary" className='picture-button'  onClick={bookingHandle}>Book now</Button>{' '}
             </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -28,7 +33,7 @@ const About = () => {
             <Carousel.Caption className='caption'>
                 <h3 className='title'>Book online and begin your dream holyday</h3>
                 <p className='description'>Travel with the Airline of the Year</p>
-                <Button variant="primary">Book now</Button>{' '}
+                <Button variant="primary" className='picture-button'  onClick={bookingHandle}>Book now</Button>{' '}
             </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -41,11 +46,19 @@ const About = () => {
             <Carousel.Caption className='caption'>
                 <h3 className='title'>Book online and begin your dream holyday</h3>
                 <p className='description'> Travel with the Airline of the Year</p>
-                <Button variant="primary">Book now</Button>{' '}
+                <Button variant="primary" className='picture-button' onClick={bookingHandle}>Book now</Button>{' '}
             </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
     </div>
+   <main>
+    <section className='container'>
+        <div>
+
+        </div>
+    </section>
+   </main>
+   </>
 
     
 

@@ -16,3 +16,10 @@
     font-size: 25px;
     color: #faf4f4 !important;
 }
+.picture-button{
+    width: 8%;
+    height: 40px;
+    font-weight: 700 !important;
+    border-radius: 20px !important;
+    margin-right: 1200px !important;
+}

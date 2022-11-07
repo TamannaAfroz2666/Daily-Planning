@@ -16,30 +16,30 @@ function App() {
 
     <Router> 
     
-      <div className="container fluid ">
+      <div className="App">
         <header className="App-header1">
-          <p className='para h1 pt-5'> Welcome </p>
-            <div className='mt-5'>
-              <div class="ui secondary  menu">
-              <Link to='/home' className='item'>
+          {/* <p className='para h1 pt-5 '> Welcome </p> */}
+            <div className=''>
+              <div class="ui secondary menu parent-div">
+              <Link to='/home' className=' navbar item '>
               Home 
               </Link>
-              <Link to='/about' className='item'>
+              <Link to='/about' className='navbar item '>
               About 
               </Link>
-              <Link to='/products' className='item'>
+              <Link to='/products' className=' navbar item'>
               Product
               </Link>                
                 <div class="right menu">
-                  <div class="item">
+                  <div class=" item">
                     <div class="ui icon input">
                       <Input type="text" placeholder="Search..." />
                       <i class="search link icon"></i>
                 </div>
             </div>
-            <a class="ui item">
+            <Link to='/logout' className=' navbar item'>
               Logout
-            </a>
+              </Link>
           </div>
         </div>
           </div>

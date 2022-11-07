@@ -1,7 +1,20 @@
-.App {
+.container {
   text-align: center;
+  height: 100%;
+  background-color: rgb(247, 233, 218);
+}
+.para{
+  color: red;
+ 
+}
+.from{
+  width: 50%;
+  margin: 100px;
 }
 
+.btn-ui-class {
+  background-color: #61dafb !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

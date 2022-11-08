@@ -28,5 +28,6 @@
 
 .images{
     height: 250px !important;  
+    object-fit: contain;
     column-gap: 10px !important;
 }

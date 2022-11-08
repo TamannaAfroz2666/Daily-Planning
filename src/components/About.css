@@ -23,3 +23,10 @@
     border-radius: 20px !important;
     margin-right: 1200px !important;
 }
+
+/* card section */
+
+.images{
+    height: 250px !important;  
+    column-gap: 10px !important;
+}

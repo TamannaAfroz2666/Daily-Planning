@@ -3,6 +3,8 @@ import  './About.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+// import Card from 'react-bootstrap/Card';
+// import  CardGroup  from 'react-bootstrap/CardGroup';
 const About = () => {
 
     const bookingHandle =() =>{
@@ -115,10 +117,89 @@ const About = () => {
         </Carousel>
     </div>
    <main>
-    <section className='container'>
+    <section className='container mt-5'>
         <div>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/bag2.jpg" className=" images card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Purchase extra baggage</h2>
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/bag4.jpg" className=" images card-img-top" alt="..."/>
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">Purchase extra baggage</h2>                    
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/bagage1.jpg"  className=" images card-img-top"  alt="..."/>
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">Purchase extra baggage</h2>
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/bag5.jpg"  className=" images card-img-top"  alt="..."/>
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">Purchase extra baggage</h2>
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/bagage1.jpg"  className=" images card-img-top"  alt="..."/>
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">Purchase extra baggage</h2>
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/bag2.jpg"  className=" images card-img-top"  alt="..."/>
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">Purchase extra baggage</h2>
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/bag3.jpg"  className=" images card-img-top"  alt="..."/>
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">Purchase extra baggage</h2>
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg rounded-3">
+                    <img src="/images/baggae6.jpg"  className=" images card-img-top"  alt="..."/>
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">Purchase extra baggage</h2>
+                        <p class="card-text">Additional baggage allowance can be purchased before your trip. Save when you purchase it online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+            
 
         </div>
+    </section>
+    <section>
+        <h1 className='mt-5 text-center text-danger'>this is</h1>
     </section>
    </main>
    </>

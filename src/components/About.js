@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
+// import Dropdown from 'react-bootstrap/Dropdown';
 // import Card from 'react-bootstrap/Card';
 // import Col from 'react-bootstrap/Col';
 // import Row from 'react-bootstrap/Row';
@@ -188,10 +189,25 @@ const About = () => {
                 <section>
                     <div className=' fare-details mt-5'>
                         <div className="sub-fare-details">
-                            
+                            <div className="fare-title">
+                                <h1 className='fare-text mt-5 '>Find Grate Fares</h1>
+                            </div>
+                            <div className="dropdown-fares d-flex mt-5">
+                              <div className="from-fares">
+                                    <h2>From</h2>
+                              </div>
+
+                                <div className="dropdown-content">
+                                    <input type="text" placeholder='Dhaka DAC' />
+                                    {/* <a href="#/about">Link 1</a>  */}
+                                </div> 
+                               
+                            </div>
+
                         </div>
 
                     </div>
+                    <br /> <br /> <br />
                     
                 </section>
 

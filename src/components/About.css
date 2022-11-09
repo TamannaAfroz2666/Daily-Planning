@@ -24,7 +24,7 @@
     margin-right: 1200px !important;
 }
 
-/* card section */
+/* card section start */
 
 .parent-class {
     margin-left: 3px !important;
@@ -44,6 +44,9 @@
     
     
 }
+.card-body{
+    text-align: center;
+}
 
 .card-title{
     font-size: 20px;
@@ -56,4 +59,23 @@
     font-size: 18px;
     color: rgb(191, 9, 9);
     font-weight: 700;
+}
+/* card section end  */
+
+
+
+/* Fare section start  */
+
+.fare-text{
+    font-size: 30px;
+    font-weight: 300;
+
+}
+.dropdown-fares{
+    column-gap: 10px!important;
+}
+
+.dropdown-content{
+    font-size: 30px;
+    border-color: none;
 }

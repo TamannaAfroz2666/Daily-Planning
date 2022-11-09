@@ -23,8 +23,12 @@ const About = () => {
         try {
 
             ( async () => {
-                const res = await axios.get(`https://fakestoreapi.com/products`, { signal: ac.signal })
-                    setArrData(res?.data)
+                 await axios.get(`https://fakestoreapi.com/products`, { signal: ac.signal }).then((response)=>{
+                    setArrData(response?.data)
+                 }
+
+                 )
+                    
             })()
 
             // error exception
@@ -150,21 +154,22 @@ const About = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <main>
+            <main className='container'>
                 {/* Start card section */}
                 <section className='container mt-5'>
                     <div className='d-flex align-items-center justify-content-between flex-wrap'>
-                        {arrData.slice(0, 15).map((item, i) => {
+                        {arrData.slice(0, 9).map((item, i) => {
                             return (
-                                <div class=" row  col-md-4 col-sm-12 g-4 mb-4">
-                                    <div class="col">
-                                        <div class="card shadow-lg rounded-3">
-                                            <img src={item.image} className=" images card-img-top" alt="..." />
-                                            <div class="card-body">
-                                                <h2 class="card-title text-primary">{item.title}</h2>
-                                                <p class="card-text"> { item.description.slice(0, 15) }... </p>
-                                                <p class="card-text"> Price { item.price } </p>
-                                                <p class="card-text"> Category { item.category } </p>
+                                <div className=" parent-class row  col-md-4 col-sm-12 g-4 mt-2 ">
+                                    <div className="col">
+                                        <div className=" sub-class card shadow-lg rounded-3">
+                                            <img src={item.image} className=" images card-img-top mt-5" alt="..." />
+                                            <div className="card-body">
+                                                <h2 className="card-title text-primary">{item.title}</h2>
+                                                <p className="card-text"> { item.description.slice(0, 15) }..... </p>
+                                                <p className="card-text"> Category { item.category } </p>
+                                                <p className="card-price"> Price { item.price } </p>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -176,8 +181,19 @@ const About = () => {
 
                         <br />
                     </div>
-                </section>
+                    <br />
+                </section> <br />
                 {/* End Card Section  */}
+
+                <section>
+                    <div className=' fare-details mt-5'>
+                        <div className="sub-fare-details">
+                            
+                        </div>
+
+                    </div>
+                    
+                </section>
 
             </main>
         </>

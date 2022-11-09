@@ -26,8 +26,34 @@
 
 /* card section */
 
+.parent-class {
+    margin-left: 3px !important;
+   
+   
+}
+.sub-class{
+    width: 400px !important;
+    height: 400px !important;
+   
+}
+
 .images{
-    height: 250px !important;  
+    height: 150px !important;  
     object-fit: contain;
     column-gap: 10px !important;
+    
+    
+}
+
+.card-title{
+    font-size: 20px;
+    
+}
+.card-text{
+    font-size: 15px;
+}
+.card-price{
+    font-size: 18px;
+    color: rgb(191, 9, 9);
+    font-weight: 700;
 }

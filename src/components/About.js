@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './About.css';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -211,7 +212,9 @@ const About = () => {
                                         </div> 
                                     
                                     </div> <br />
-                                    <div className="best-price mt-5">
+                               
+                                <Link to='/home' className=' item '>
+                                <div className="best-price mt-5">
                                     <div className="icon-title mt-2">
 
                                         <h4>Best Price Guagarantee </h4>
@@ -223,7 +226,10 @@ const About = () => {
                                         </svg>
                                     </div>
                                     
-                                    </div>
+                                </div>
+
+             
+                                </Link>
                            </div>
 
 
@@ -234,6 +240,7 @@ const About = () => {
                     <br /> <br /> <br />
                     
                 </section>
+                
 
             </main>
         </>

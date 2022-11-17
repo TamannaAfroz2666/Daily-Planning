@@ -7,6 +7,7 @@ import About from './components/About';
 import Products from './components/Products';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Input  } from 'semantic-ui-react'
+import Login from './components/Login';
 
 
 
@@ -21,6 +22,10 @@ function App() {
           {/* <p className='para h1 pt-5 '> Welcome </p> */}
             <div className=''>
               <div class="ui secondary menu parent-div">
+              <Link to='/' className='navbar item'>
+                Login
+              </Link>
+
               <Link to='/home' className=' navbar item '>
               Home 
               </Link>
@@ -65,6 +70,7 @@ function App() {
           <Route exact path='/home' component={Home} />
           <Route exact path='/about' component={About}/>
           <Route exact path='/products' component={Products}/>
+          <Route exact path='/' component={Login}/>
         </header>
       </div>
    

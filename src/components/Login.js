@@ -2,7 +2,8 @@ import React from 'react'
 import './Login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { BrowserRouter as Router , Route, Link} from 'react-router-dom';
+import { BrowserRouter as  Link} from 'react-router-dom';
+import { FaFacebook, FaInstagramSquare, FaTwitter } from "react-icons/fa";
 
 
 const Login = () => {
@@ -10,7 +11,9 @@ const Login = () => {
         console.log('submit success');
     }
   return (
-    <div className='container fluid'>
+    <>
+
+<div className='container fluid'>
         <div className='login-head rounded '>
             <div className="sub">
                 <div className="title">
@@ -29,7 +32,7 @@ const Login = () => {
                     </Form.Group>
                     <Link to='/products'>
                     <Button variant="primary" className='button-login' type="submit" onClick={submitHandler}>
-                        Submit
+                        Login
                     </Button>
 
                     </Link>
@@ -41,8 +44,36 @@ const Login = () => {
           
 
         </div>
+        <div className="icon mt-5 d-flex justify-content-evenly">
+            
+            <div>
+                <a href="https://facebook.com">
+                <FaFacebook style={{color:'#310876', fontSize: 25}}/>
+                </a>
+                
+            </div>
+            <div>
+                <a href="https://instagram.com">
+                <FaInstagramSquare style={{color:'#310876', fontSize: 25}}/> 
+                </a>
+                
+            </div> 
+                <div>
+                    <a href="https://twitter.com">
+                    <FaTwitter style={{color:'#310876', fontSize: 25}}/>
+                    </a>
+                    
+                </div>
+           
+             
+
+               
+            
+          
+        </div>
        
     </div>
+    </>
   )
 }
 

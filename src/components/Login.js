@@ -2,23 +2,29 @@ import React, { useState } from 'react'
 import './Login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { BrowserRouter as  Link} from 'react-router-dom';
+import { BrowserRouter as  Link, useHistory} from 'react-router-dom';
 import { FaFacebook, FaInstagramSquare, FaTwitter } from "react-icons/fa";
 
 
 const Login = () => {
+    const history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const submitHandler = (e) =>{
+
         e.preventDefault();
+
         console.log('submit success');
         localStorage.setItem('Email:', email);
         localStorage.setItem('password:', password);
         setPassword('');
         setEmail('');
+        // window.location.replace('/products') // another option
+        history.push('/products');  /// correct option
     }
+
   return (
     <>
 
@@ -39,12 +45,12 @@ const Login = () => {
                             <Form.Label className='input-field' >Password</Form.Label>
                             <Form.Control autoComplete='nope' className='input-field' value={password} type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                         </Form.Group>
-                        <Link to='/products'>
+                        
                         <Button variant="primary" className='button-login' type="submit" onClick={submitHandler}>
                             Login
                         </Button>
 
-                        </Link>
+                       
                     
                     </Form>
                     

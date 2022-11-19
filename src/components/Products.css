@@ -1,0 +1,12 @@
+.header-title{
+    color: rgb(8, 179, 236);
+}
+
+.main{
+    width: 20%;
+    height: 500px;
+    margin-left: 200px;
+    margin-top: 100px;
+
+    background-color: rgb(247, 244, 240);
+}

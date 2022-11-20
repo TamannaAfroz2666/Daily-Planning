@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Products.css'
 import { Button, Form } from 'semantic-ui-react'
 
 const Products = () => {
+  const [name, setName] = useState('');
+  const [size, setSize] = useState('');
+  const [price, setPrice]= useState('');
+  const [quantity, setQuantity] = useState('');
+
+  const cardButton = (e) =>{
+    console.log('the card button is here:');
+    e.preventDefault();
+    localStorage.setItem('product name', name);
+    localStorage.setItem('Product size', size);
+    localStorage.setItem('product price:', price);
+    localStorage.setItem('product quantity:', quantity);
+    setName('');
+    setPrice('');
+    setSize('');
+    setQuantity('');
+  }
+
   return (
     <div>
 
@@ -14,23 +32,25 @@ const Products = () => {
           <Form>
               <Form.Field>
                 <label>Product Name</label>
-                <input type='text' placeholder='name' />
+                <input type='text' placeholder='name' value={name} onChange={ (e) => setName(e.target.value)} />
               </Form.Field>
               <Form.Field>
                 <label>Product Size</label>
-                <input type='number' placeholder='size' />
+                <input type='number' placeholder='size' value={size} onChange={ (e) => setSize(e.target.value) } />
               </Form.Field>
               <Form.Field>
                 <label>Product Price</label>
-                <input placeholder='price' />
+                <input placeholder='price' value={price} onChange={ (e) => setPrice (e.target.value) }/>
               </Form.Field>
               <Form.Field>
                 <label>Product Quantity</label>
-                <input placeholder='quantity' />
+                <input placeholder='quantity' value={quantity} onChange={(e)=>setQuantity(e.target.value)} />
               </Form.Field>
-              <Button type='submit'>Add Cart</Button>
+              <Button className='card-button mt-4' type='submit' onClick={cardButton}>Add Cart</Button>
           </Form>
         </div>
+
+        
 
 
       </div>

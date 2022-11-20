@@ -19,7 +19,8 @@
 }
 .tableClass{
     width: 60%;
-    margin-top: 100px !important;    
+    margin-top: 100px !important;  
+    text-align: center;  
 }
 .table-row{
     font-weight: 700;

@@ -29,6 +29,13 @@ const Products = () => {
      
     })
   }, [] );
+  const setData = (data1) => {
+    let { id, firstName, lastName, checkbox } = data1;
+    localStorage.setItem('ID', id);
+    localStorage.setItem('First Name', firstName);
+    localStorage.setItem('Last Name', lastName);
+    localStorage.setItem('Checkbox Value', checkbox)
+}
 
   const cardButton = (e) =>{
     console.log('the card button is here:');
@@ -67,7 +74,18 @@ const Products = () => {
     // setPrice('');
     // setSize('');
     // setQuantity('');
-  
+    const getData = () => {
+      axios.get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
+          .then((getData) => {
+           setAPIData(getData.data);
+       })
+  }
+    const onDelete = (id) =>{
+      
+      axios.delete(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData/${id}`).then(() =>{
+        getData();
+      })
+    }
 
   return (
     <div>
@@ -125,15 +143,13 @@ const Products = () => {
                   <td> {item.price && item.price} </td>
                   <td> {item.quantity && item.quantity}</td>
                  <Link to={''}>
-                 <td> <button className='btn-Edit' >Edit</button>
+                 <td> <button className='btn-Edit' onClick={() => setData(item)} >Edit</button>
                   </td>               
                  </Link>
-                 <Link to={''}>
-                 <td> <button className='btn-Delete'>Delete</button>
+             
+                 <td> <button className='btn-Delete' onClick={() => onDelete(item.id)}>Remove</button>
                   </td>               
-                 </Link>
-                  
-                 
+                
                 </tr>
 
                 )

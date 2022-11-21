@@ -27,8 +27,7 @@ const Login = () => {
 
   return (
     <>
-
-        <div className='container fluid'>
+        <div className='container11 fluid'>
             <div className='login-head rounded '>
                 <div className="sub">
                     <div className="title">
@@ -40,24 +39,16 @@ const Login = () => {
                             <Form.Label className='input-field'>Email address</Form.Label>
                             <Form.Control autoComplete='nope' className='input-field' value={email} type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}  />
                         </Form.Group>
-
                         <Form.Group className="mb-3">
                             <Form.Label className='input-field' >Password</Form.Label>
                             <Form.Control autoComplete='nope' className='input-field' value={password} type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                        </Form.Group>
-                        
+                        </Form.Group>                        
                         <Button variant="primary" className='button-login' type="submit" onClick={submitHandler}>
                             Login
                         </Button>
-
-                       
-                    
-                    </Form>
-                    
+                    </Form>                   
                     </div>
             </div> 
-            
-
             </div>
             <div className="icon mt-5 d-flex justify-content-evenly">            
                 <div>

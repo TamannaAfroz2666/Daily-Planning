@@ -22,7 +22,20 @@
     margin-top: 100px !important;  
     text-align: center;  
 }
-.table-row{
+/* .table-row{
     font-weight: 700;
     background-color: rgb(199, 220, 239);
+}
+.table-row{
+    background-color: rgb(245, 220, 220);
+} */
+.btn-Edit{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(246, 96, 96);
+}
+.btn-Delete{
+    width: 80px;
+    height: 30px;
+    background-color: aqua;
 }

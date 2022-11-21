@@ -1,14 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Products.css'
 import axios from 'axios';
 import { Button, Form } from 'semantic-ui-react'
 import Table from 'react-bootstrap/Table';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   const [name, setName] = useState('');
   const [size, setSize] = useState('');
   const [price, setPrice]= useState('');
   const [quantity, setQuantity] = useState('');
+  const [APIData, setAPIData] = useState([]);
+  // const [display, setDisplay] = useState({
+  //   name: '',
+  //   size: '',
+  //   price: '',
+  //   quantity:''
+  // });
+
+  useEffect (() =>{
+    axios.get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`).then((response)=>{
+      if(response.status === 200){
+      console.log('get data is:', response);
+      console.log('Product Data is here:', response.data);
+      setAPIData(response.data);
+
+      }
+     
+    })
+  }, [] );
 
   const cardButton = (e) =>{
     console.log('the card button is here:');
@@ -26,6 +46,15 @@ const Products = () => {
       setSize('');
       setQuantity('');
   })
+  setAPIData([...APIData,{name, price, size, quantity}])
+
+//   setDisplay({
+//     name,
+//     size,
+//     price,
+//     quantity
+
+//   })
 }
 
       // history.push('/read')
@@ -47,8 +76,12 @@ const Products = () => {
         
 
         <div className="main shadow-lg rounded">
-        <h1 className='header-title text-center mt-5 '>Product List</h1>
+        <h1 className='header-title text-center mt-5 '>Add Product</h1>
           <Form>
+              {/* <Form.Field>
+                <label>Artical Number</label>
+                <input autoComplete='nope' type='text' placeholder='name' value={name} onChange={ (e) => setName(e.target.value)} />
+              </Form.Field> */}
               <Form.Field>
                 <label>Product Name</label>
                 <input autoComplete='nope' type='text' placeholder='name' value={name} onChange={ (e) => setName(e.target.value)} />
@@ -68,9 +101,8 @@ const Products = () => {
               <Button className='card-button mt-4' type='submit' onClick={cardButton}>Add Cart</Button>
           </Form>
         </div>
+        
         <div className='tableClass '>
-
-
           <Table striped bordered hover>
             <thead>
               <tr className='table-row'>
@@ -80,16 +112,36 @@ const Products = () => {
                 <th>Product Price</th>
                 <th>Quantity</th>
                 <th>Action</th>
+                
               </tr>
             </thead>
-            {/* <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
+            <tbody>
+              {APIData.map((item, i)=>{
+                return(
+                  <tr key={i} className='table-row'>
+                  <td> {i} </td>
+                  <td> {item.name && item.name }  </td>
+                  <td> {item.size && item.size} </td>
+                  <td> {item.price && item.price} </td>
+                  <td> {item.quantity && item.quantity}</td>
+                 <Link to={''}>
+                 <td> <button className='btn-Edit' >Edit</button>
+                  </td>               
+                 </Link>
+                 <Link to={''}>
+                 <td> <button className='btn-Delete'>Delete</button>
+                  </td>               
+                 </Link>
+                  
+                 
+                </tr>
+
+                )
+
+              
+              })}
+             
+              {/* <tr>
                 <td>2</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
@@ -99,8 +151,8 @@ const Products = () => {
                 <td>3</td>
                 <td colSpan={2}>Larry the Bird</td>
                 <td>@twitter</td>
-              </tr>
-            </tbody> */}
+              </tr> */}
+            </tbody>
           </Table>
 
         </div>

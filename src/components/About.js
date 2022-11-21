@@ -213,7 +213,7 @@ const About = () => {
                                     
                                     </div> <br />
                                
-                                <Link to='/home' className=' item '>
+                                <Link to='' className=' item '>
                                 <div className="best-price mt-5">
                                     <div className="icon-title mt-2">
 

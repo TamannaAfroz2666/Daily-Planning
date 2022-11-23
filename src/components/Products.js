@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Button, Form } from 'semantic-ui-react'
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
+import {useReactToPrint} from 'react-to-print'
 
 const Products = () => {
   const [name, setName] = useState('');
@@ -93,6 +94,15 @@ const Products = () => {
 
   return (
     <div>
+
+      <useReactToPrint 
+      trigger= { ()=> {
+        return <button>print</button>
+      }
+
+      }
+      
+      />
 
       <div className='container1 d-flex'>
         <div className="main shadow-lg rounded">

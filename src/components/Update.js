@@ -16,7 +16,7 @@ const Update = () => {
     // const[apiData, setApiData] = useState([]);
 
     useEffect(() => {
-        setID(localStorage.getItem('ID'))
+        setID(localStorage.getItem('ID'));
         setName(localStorage.getItem('Product Name'));
         setSize(localStorage.getItem('Product size'));
         setPrice(localStorage.getItem('Product Price'));
@@ -30,14 +30,14 @@ const Update = () => {
     const updateButton = () =>{
         console.log('Data is updated here');
         axios.put(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData/${id}`, {
-           
+            id,          
             name,
             size,
             price,
             quantity
         }).then(() => {
 
-            history.push('/products')
+            history.push('/products');
         })
 
     }

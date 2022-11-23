@@ -97,7 +97,7 @@ const Products = () => {
 
       <useReactToPrint 
       trigger= { ()=> {
-        return <button>print</button>
+        return <button>Print</button>
       }
 
       }

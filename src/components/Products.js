@@ -29,12 +29,14 @@ const Products = () => {
      
     })
   }, [] );
+
   const setData = (data1) => {
-    let { id, firstName, lastName, checkbox } = data1;
+    let { id, name, size, price, quantity } = data1;
     localStorage.setItem('ID', id);
-    localStorage.setItem('First Name', firstName);
-    localStorage.setItem('Last Name', lastName);
-    localStorage.setItem('Checkbox Value', checkbox)
+    localStorage.setItem('Product Name', name);
+    localStorage.setItem('Product size', size);
+    localStorage.setItem('Product Price', price);
+    localStorage.setItem('Product Quantity', quantity)
 }
 
   const cardButton = (e) =>{
@@ -74,6 +76,8 @@ const Products = () => {
     // setPrice('');
     // setSize('');
     // setQuantity('');
+
+    
     const getData = () => {
       axios.get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
           .then((getData) => {
@@ -91,22 +95,16 @@ const Products = () => {
     <div>
 
       <div className='container1 d-flex'>
-        
-
         <div className="main shadow-lg rounded">
         <h1 className='header-title text-center mt-5 '>Add Product</h1>
           <Form>
-              {/* <Form.Field>
-                <label>Artical Number</label>
-                <input autoComplete='nope' type='text' placeholder='name' value={name} onChange={ (e) => setName(e.target.value)} />
-              </Form.Field> */}
               <Form.Field>
                 <label>Product Name</label>
                 <input autoComplete='nope' type='text' placeholder='name' value={name} onChange={ (e) => setName(e.target.value)} />
               </Form.Field>
               <Form.Field>
                 <label>Product Size</label>
-                <input autoComplete='nope' type='number' placeholder='size' value={size} onChange={ (e) => setSize(e.target.value) } />
+                <input autoComplete='nope' type='text' placeholder='size' value={size} onChange={ (e) => setSize(e.target.value) } />
               </Form.Field>
               <Form.Field>
                 <label>Product Price</label>
@@ -129,8 +127,7 @@ const Products = () => {
                 <th>Product Size</th>
                 <th>Product Price</th>
                 <th>Quantity</th>
-                <th>Action</th>
-                
+                <th>Action</th>               
               </tr>
             </thead>
             <tbody>
@@ -142,7 +139,8 @@ const Products = () => {
                   <td> {item.size && item.size} </td>
                   <td> {item.price && item.price} </td>
                   <td> {item.quantity && item.quantity}</td>
-                 <Link to={''}>
+                  {/* ///${item.id} */}
+                 <Link to={`/update/${item.id}`}> 
                  <td> <button className='btn-Edit' onClick={() => setData(item)} >Edit</button>
                   </td>               
                  </Link>

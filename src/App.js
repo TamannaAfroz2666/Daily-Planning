@@ -8,11 +8,13 @@ import Products from './components/Products';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Input  } from 'semantic-ui-react'
 import Login from './components/Login';
+import Update from './components/Update';
 
 
 
 
 function App() {
+
   return (
 
     <Router> 
@@ -70,6 +72,8 @@ function App() {
           <Route exact path='/home' component={Home} />
           <Route exact path='/about' component={About}/>
           <Route exact path='/products' component={Products}/>
+          {/* <Route exact path='/update' component={Update}/> */}
+          <Route exact path={`/update/:id`} component={Update}/>
           <Route exact path='/' component={Login}/>
         </header>
       </div>

@@ -134,58 +134,74 @@ const Products = () => {
           </Form>
         </div>
         {/* <div ref = {el => (this.componentRef=el) }  className='tableClass '> */}
+      <div ref={ref} className='d-flex' >
         <div className='tableClass '>
-          <Table striped bordered hover>
-            <thead>
-              <tr className='table-row'>
-                <th >Artical Number</th>
-                <th>Product Name</th>
-                <th>Product Size</th>
-                <th>Product Price</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                <th>Update</th>
-                <th>Delete</th>               
-              </tr>
-            </thead>
-            <tbody>
-              {APIData.map((item, i)=>{
-                return(
-                  <tr key={i} className='table-row'>
-                  <td> {i} </td>
-                  <td> {item.name && item.name }  </td>
-                  <td> {item.size && item.size} </td>
-                  <td> {item.price && item.price} </td>
-                  <td> {item.quantity && item.quantity}</td>
-                  <td> {item.quantity * item.price}</td>
-                  {/* ///${item.id} */}
-                 <Link to={`/update/${item.id}`}> 
-                 <td> <button className='btn-Edit' onClick={() => setData(item)} >Edit</button>
-                  </td>               
-                 </Link>
-             
-                 <td> <button className='btn-Delete' onClick={() => onDelete(item.id)}>Remove</button>
-                  </td>               
-                
+            <Table striped bordered hover>
+              <thead>
+                <tr className='table-row'>
+                  <th >Artical Number</th>
+                  <th>Product Name</th>
+                  <th>Product Size</th>
+                  <th>Product Price</th>
+                  <th>Quantity</th>
+                  <th>Total Price</th>
+                  <th>Update</th>
+                  <th>Delete</th>               
                 </tr>
-
-                )
-
+              </thead>
+              <tbody>
+                {APIData.map((item, i)=>{
+                  return(
+                    <tr key={i} className='table-row'>
+                    <td> {i} </td>
+                    <td> {item.name && item.name }  </td>
+                    <td> {item.size && item.size} </td>
+                    <td> {item.price && item.price} </td>
+                    <td> {item.quantity && item.quantity}</td>
+                    <td> {item.quantity * item.price}</td>
+                    {/* ///${item.id} */}
+                  <Link to={`/update/${item.id}`}> 
+                  <td> <button className='btn-Edit' onClick={() => setData(item)} >Edit</button>
+                    </td>               
+                  </Link>
               
-              })}
-            </tbody>
-          </Table>
+                  <td> <button className='btn-Delete' onClick={() => onDelete(item.id)}>Remove</button>
+                    </td>               
+                  
+                  </tr>
 
-         
+                  )
+
+                
+                })}
+              </tbody>
+            </Table>
+
+          
 
         </div>
+        <div  className='Pos-part'>
+      
 
-        <div ref={ref} className='Pos-part'>
-          <table className='POS-table '>
+          <table className='POS-table'>
+          <div>
+          <h3 className='text-center mt-3'>NIT SYSTEM</h3>
+          <p className='text-center'>00000-33 ||Jalan 123 <br /> Dhanmondi-27 branch,Dhaka <br />
+          0123456788</p>
+          <h5>--------------*******************************--------------------</h5>
+
+          <p className='text-center'>ABC Sdn Bhd</p>
+          <p className='text-center'>Jalan 12345 <br /> Dhaka <br /> com Reg no: 00000-AA <br />GST No: 99999999
+          </p>
+          <h5>--------------*******************************--------------------</h5>
+
+
+          
+          </div>
             <tbody>
               {APIData.map((item, i) =>{
                 return(
-                  <tr key={i} className='pos-header d-flex align-items-start flex-column'>
+                  <tr key={i} className='pos-header d-flex align-items-center flex-column'>
                     {/* <td>Product Id: {i}</td> */}
                     <td>Product Name: {item.name}</td>
                     <td>Product Size: {item.size}</td>
@@ -240,13 +256,14 @@ const Products = () => {
             </tbody> 
           </table>
         </div>
+      </div>
 
         
       </div>
 
       <div className='print-button d-flex justify-content-end'>
       {/* <button type="button" className=" print-btn btn btn-secondary mt-5 me-5" onClick={PrintHandle}>Print</button> */}
-      <ReactPrint trigger={() =><button type="button" className=" print-btn btn btn-secondary mt-5 me-5" onClick={PrintHandle}>Print</button>} content={() =>ref.current  } />
+      <ReactPrint trigger={() =><button type="button" className=" print-btn btn btn-secondary mt-5 me-5" onClick={PrintHandle}>Print</button>} content={() =>ref.current} />
       </div>
 
      

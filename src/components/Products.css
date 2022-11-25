@@ -42,10 +42,10 @@
 
 /* poss  */
 .POS-table{
-    min-width: 300px;
-    /* width: 500px !important; */
-    background-color: #ddd;
-    margin-top: 300px;
+    min-width: 400px;
+    height: 250px;
+    background-color: rgb(254, 244, 244);
+    margin-top: 250px;
     margin-right: 50px!important;
     row-gap: 20px !important;
 }
@@ -53,15 +53,12 @@
 /* .header-subtotal{
     min-width: 300px;
 } */
-.sub-product{
+.pos-header{
     /* background-color: #ddd; */
     /* padding-bottom: 300px; */
     font-size: 15px !important;
-    padding: 4px;   
-}
-.show-product{
-    /* padding-bottom: 300px; */
-    font-size: 15px;
+    padding: 4px;
+   
 }
 
 .print-btn{

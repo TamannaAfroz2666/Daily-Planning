@@ -128,9 +128,7 @@
 }
 .best-price{
     display: flex;
-    justify-content: end;
-   
-   
+    justify-content: end; 
 }
 .icon-title{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

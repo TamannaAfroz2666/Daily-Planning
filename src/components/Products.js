@@ -4,9 +4,11 @@ import axios from 'axios';
 import { Button, Form } from 'semantic-ui-react'
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
-// import {useReactToPrint} from 'react-to-print'
+import ReactPrint from 'react-to-print'
+import {useRef} from 'react'
 
 const Products = () => {
+  const ref = useRef();
   const [name, setName] = useState('');
   const [size, setSize] = useState('');
   const [price, setPrice]= useState('');
@@ -92,6 +94,10 @@ const Products = () => {
       })
     }
 
+    const PrintHandle = () =>{
+      console.log('print of the pos');
+    }
+
   return (
     <div>
 {/* 
@@ -174,53 +180,73 @@ const Products = () => {
 
         </div>
 
-        <table className='POS-table d-flex align-items-start flex-column'>
-          <tr >
-            <td className='sub-product'>
-              Product Name:
-            </td>
-            <td className='show-product'>
-              {name}
-            </td>
-          </tr>
-          <tr>
+        <div ref={ref} className='Pos-part'>
+          <table className='POS-table '>
+            <tbody>
+              {APIData.map((item, i) =>{
+                return(
+                  <tr key={i} className='pos-header d-flex align-items-start flex-column'>
+                    {/* <td>Product Id: {i}</td> */}
+                    <td>Product Name: {item.name}</td>
+                    <td>Product Size: {item.size}</td>
+                    <td>Product Price: {item.price}</td>
+                    <td>Product Quantity: {item.quantity}</td>
+                    <td>Total Price: {item.quantity * item.price}</td>
+                  </tr>                
+                )
+              })
 
-            <td className='sub-product'>
-              Product Price:
-            </td>
-            <td className='show-product'>
-              {name}
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td className='sub-product'>
-            Product Size:
-            </td>
-            <td className='show-product'>
-              {name}
-            </td>
-          </tr>
-          <tr>
+              }
+            {/* <tr >
+              <td className='sub-product'>
+                Product Name:
+              </td>
+              <td className='show-product'>
+                {name}
+              </td>
+            </tr>
+            <tr>                    
+              <td className='sub-product'>
+                Product Price:
+              </td>
+              <td className='show-product'>
+                {price}
+              </td>
+            </tr>
+            <tr>          
+              <td className='sub-product'>
+              Product Size:
+              </td>
+              <td className='show-product'>
+                {size}
+              </td>
+            </tr>
+            <tr>
+              <td className='sub-product'>
+                Product Quantity:
+              </td>
+              <td className='show-product'>
+                {quantity}
+              </td>
+            </tr>
+            <tr>
+              <td className='sub-product'>
+                Total Price:
+              </td>
+              <td className='show-product'>
+              {quantity * price}
+              </td>
+            </tr> */}
+            </tbody> 
+          </table>
+        </div>
 
-            <td></td>
-            <td className='sub-product'>
-              Product Quantity:
-            </td>
-            <td className='show-product'>
-              {name}
-            </td>
-          </tr>
-            
-
-            </table>
         
-
-
       </div>
 
-      <div className='print-button'>
-      <button type="button" class=" print-btn btn btn-secondary mt-5 ms-5">Print</button>
+      <div className='print-button d-flex justify-content-end'>
+      {/* <button type="button" className=" print-btn btn btn-secondary mt-5 me-5" onClick={PrintHandle}>Print</button> */}
+      <ReactPrint trigger={() =><button type="button" className=" print-btn btn btn-secondary mt-5 me-5" onClick={PrintHandle}>Print</button>} content={() =>ref.current  } />
       </div>
 
      

@@ -39,3 +39,33 @@
     height: 30px;
     background-color: aqua;
 }
+
+/* poss  */
+.POS-table{
+    min-width: 300px;
+    /* width: 500px !important; */
+    background-color: #ddd;
+    margin-top: 300px;
+    margin-right: 50px!important;
+    row-gap: 20px !important;
+}
+
+/* .header-subtotal{
+    min-width: 300px;
+} */
+.sub-product{
+    /* background-color: #ddd; */
+    /* padding-bottom: 300px; */
+    font-size: 20px !important;   
+}
+.show-product{
+    /* padding-bottom: 300px; */
+    font-size: 20px;
+}
+
+.print-btn{
+    width: 110px;
+    
+  
+
+}

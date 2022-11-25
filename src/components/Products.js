@@ -167,26 +167,63 @@ const Products = () => {
 
               
               })}
-             
-              {/* <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colSpan={2}>Larry the Bird</td>
-                <td>@twitter</td>
-              </tr> */}
             </tbody>
           </Table>
 
+         
+
         </div>
+
+        <table className='POS-table d-flex align-items-start flex-column'>
+          <tr >
+            <td className='sub-product'>
+              Product Name:
+            </td>
+            <td className='show-product'>
+              {name}
+            </td>
+          </tr>
+          <tr>
+
+            <td className='sub-product'>
+              Product Price:
+            </td>
+            <td className='show-product'>
+              {name}
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td className='sub-product'>
+            Product Size:
+            </td>
+            <td className='show-product'>
+              {name}
+            </td>
+          </tr>
+          <tr>
+
+            <td></td>
+            <td className='sub-product'>
+              Product Quantity:
+            </td>
+            <td className='show-product'>
+              {name}
+            </td>
+          </tr>
+            
+
+            </table>
         
 
 
       </div>
+
+      <div className='print-button'>
+      <button type="button" class=" print-btn btn btn-secondary mt-5 ms-5">Print</button>
+      </div>
+
+     
 
 
     </div>

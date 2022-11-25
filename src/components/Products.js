@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Button, Form } from 'semantic-ui-react'
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
-import {useReactToPrint} from 'react-to-print'
+// import {useReactToPrint} from 'react-to-print'
 
 const Products = () => {
   const [name, setName] = useState('');
@@ -94,15 +94,15 @@ const Products = () => {
 
   return (
     <div>
-
+{/* 
       <useReactToPrint 
       trigger= { ()=> {
         return <button>Print</button>
-      }
-
-      }
-      
-      />
+      }}
+      content ={() => this.componentRef}
+      documentTitle = 'new document'
+      pageStyle = "print"
+       /> */}
 
       <div className='container1 d-flex'>
         <div className="main shadow-lg rounded">
@@ -127,7 +127,7 @@ const Products = () => {
               <Button className='card-button mt-4' type='submit' onClick={cardButton}>Add Cart</Button>
           </Form>
         </div>
-        
+        {/* <div ref = {el => (this.componentRef=el) }  className='tableClass '> */}
         <div className='tableClass '>
           <Table striped bordered hover>
             <thead>
@@ -137,7 +137,9 @@ const Products = () => {
                 <th>Product Size</th>
                 <th>Product Price</th>
                 <th>Quantity</th>
-                <th>Action</th>               
+                <th>Total Price</th>
+                <th>Update</th>
+                <th>Delete</th>               
               </tr>
             </thead>
             <tbody>
@@ -149,6 +151,7 @@ const Products = () => {
                   <td> {item.size && item.size} </td>
                   <td> {item.price && item.price} </td>
                   <td> {item.quantity && item.quantity}</td>
+                  <td> {item.quantity * item.price}</td>
                   {/* ///${item.id} */}
                  <Link to={`/update/${item.id}`}> 
                  <td> <button className='btn-Edit' onClick={() => setData(item)} >Edit</button>

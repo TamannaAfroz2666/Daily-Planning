@@ -9,10 +9,10 @@ const Update = () => {
 
     let history = useHistory();
     // const [id, setID] = useState(null);
-    const [name, setName] = useState('');
-    const [size, setSize] = useState('');
-    const [price, setPrice] = useState('');
-    const [quantity, setQuantity] = useState('');
+    // const [name, setName] = useState('');
+    // const [size, setSize] = useState('');
+    // const [price, setPrice] = useState('');
+    // const [quantity, setQuantity] = useState('');
     const[apiData, setApiData] = useState([]);
 
     const OnChangeApidata =(e) =>{

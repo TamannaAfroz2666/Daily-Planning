@@ -94,8 +94,6 @@ const Products = () => {
 
   return (
     <div>
-
-
       <div className='container1 d-flex'>
         <div className="main shadow-lg rounded">
         <h1 className='header-title text-center mt-5 '>Add Product</h1>

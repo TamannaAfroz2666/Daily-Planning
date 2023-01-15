@@ -37,6 +37,7 @@ const Login = () => {
         // setPassword('');
         // setEmail('');
         // window.location.replace('/products') // another option
+        
         // history.push('/products');  /// correct option
     }
     console.log("initial data", initData);
@@ -90,7 +91,6 @@ const Login = () => {
                 
             
             </div>
-        
         </div>
     </>
   )

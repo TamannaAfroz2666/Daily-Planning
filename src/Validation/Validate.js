@@ -1,13 +1,17 @@
 import '../Utils/Regex'
 
 export const LoginValidation =(from) =>{
-    let error = {};
-    
-    if (! from.email.trim()){
-        error.email = "Email is required";
+    let err = {};
+
+    console.log('login validation click');
+    console.log('form is:', from);
+
+    if (!from.email.trim()){
+        err.email = "Email is required";
     }
 
-    if (from.password.trim()){
-        error.password = "Password is required";
+    if (!from.password.trim()){
+        err.password = "Password is required";
     }
+    return err;
 }

@@ -17,11 +17,12 @@ const Update = () => {
 
     const OnChangeApidata =(e) =>{
         setApiData({
-            ...apiData, [e.target.name]:e.target.value
 
+            ...apiData, [e.target.name]:e.target.value
 
         })
     }
+
 
     useEffect(() => {
         // setID(localStorage.getItem('ID'));
@@ -35,6 +36,7 @@ const Update = () => {
 
         })
     }, [id]);
+    
     const updateButton = () =>{
         console.log('Data is updated here');
         axios.put(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData/${id}`, {

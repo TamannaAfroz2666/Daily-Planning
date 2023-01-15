@@ -39,7 +39,7 @@ const Products = () => {
     localStorage.setItem('Product Name', name);
     localStorage.setItem('Product size', size);
     localStorage.setItem('Product Price', price);
-    localStorage.setItem('Product Quantity', quantity)
+    localStorage.setItem('Product Quantity', quantity);
 }
 
   const cardButton = (e) =>{
@@ -60,13 +60,7 @@ const Products = () => {
   })
   setAPIData([...APIData,{name, price, size, quantity}])
 
-//   setDisplay({
-//     name,
-//     size,
-//     price,
-//     quantity
 
-//   })
 }
 
       // history.push('/read')
@@ -100,15 +94,7 @@ const Products = () => {
 
   return (
     <div>
-{/* 
-      <useReactToPrint 
-      trigger= { ()=> {
-        return <button>Print</button>
-      }}
-      content ={() => this.componentRef}
-      documentTitle = 'new document'
-      pageStyle = "print"
-       /> */}
+
 
       <div className='container1 d-flex'>
         <div className="main shadow-lg rounded">
@@ -166,8 +152,7 @@ const Products = () => {
                   </Link>
               
                   <td> <button className='btn-Delete' onClick={() => onDelete(item.id)}>Remove</button>
-                    </td>               
-                  
+                  </td>                                 
                   </tr>
 
                   )
@@ -213,46 +198,7 @@ const Products = () => {
               })
 
               }
-            {/* <tr >
-              <td className='sub-product'>
-                Product Name:
-              </td>
-              <td className='show-product'>
-                {name}
-              </td>
-            </tr>
-            <tr>                    
-              <td className='sub-product'>
-                Product Price:
-              </td>
-              <td className='show-product'>
-                {price}
-              </td>
-            </tr>
-            <tr>          
-              <td className='sub-product'>
-              Product Size:
-              </td>
-              <td className='show-product'>
-                {size}
-              </td>
-            </tr>
-            <tr>
-              <td className='sub-product'>
-                Product Quantity:
-              </td>
-              <td className='show-product'>
-                {quantity}
-              </td>
-            </tr>
-            <tr>
-              <td className='sub-product'>
-                Total Price:
-              </td>
-              <td className='show-product'>
-              {quantity * price}
-              </td>
-            </tr> */}
+           
             </tbody> 
           </table>
         </div>
@@ -262,11 +208,8 @@ const Products = () => {
       </div>
 
       <div className='print-button d-flex justify-content-end'>
-      {/* <button type="button" className=" print-btn btn btn-secondary mt-5 me-5" onClick={PrintHandle}>Print</button> */}
       <ReactPrint trigger={() =><button type="button" className=" print-btn btn btn-secondary mt-5 me-5" onClick={PrintHandle}>Print</button>} content={() =>ref.current} />
       </div>
-
-     
 
 
     </div>

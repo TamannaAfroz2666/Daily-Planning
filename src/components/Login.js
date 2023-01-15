@@ -2,27 +2,34 @@ import React, { useState } from 'react'
 import './Login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { BrowserRouter as  Link, useHistory} from 'react-router-dom';
+// import { BrowserRouter as useHistory} from 'react-router-dom';
 import { FaFacebook, FaInstagramSquare, FaTwitter } from "react-icons/fa";
 
 
 const Login = () => {
-    const history = useHistory();
+    // const history = useHistory();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
+   
+    const initial = {
+        email: '',
+        password: "",
+    }
+    const [initData, setInitData] = useState(initial)
+    const onChangeHandler = () =>{
+        console.log('onchange');
+    }
     const submitHandler = (e) =>{
 
         e.preventDefault();
 
         console.log('submit success');
-        localStorage.setItem('Email:', email);
-        localStorage.setItem('password:', password);
-        setPassword('');
-        setEmail('');
-        // window.location.replace('/products') // another option
-        history.push('/products');  /// correct option
+        localStorage.setItem('Email:', initData.email);
+        localStorage.setItem('password:',initData.password);
+        setInitData('')
+        // setPassword('');
+        // setEmail('');
+        window.location.replace('/products') // another option
+        // history.push('/products');  /// correct option
     }
 
   return (
@@ -37,11 +44,11 @@ const Login = () => {
                     <Form autoComplete='off'>
                         <Form.Group className="mb-3" >
                             <Form.Label className='input-field'>Email address</Form.Label>
-                            <Form.Control autoComplete='nope' className='input-field' value={email} type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}  />
+                            <Form.Control autoComplete='nope' className='input-field' value={initData.email} type="email" name='email' placeholder="Enter email" onChange={onChangeHandler}  />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label className='input-field' >Password</Form.Label>
-                            <Form.Control autoComplete='nope' className='input-field' value={password} type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                            <Form.Control autoComplete='nope' className='input-field' value={initData.password} type="password" name='password' placeholder=" Enter your Password" onChange={onChangeHandler} />
                         </Form.Group>                        
                         <Button variant="primary" className='button-login' type="submit" onClick={submitHandler}>
                             Login
